@@ -21,6 +21,23 @@ fn main() {
             while(data[index] > 0){
             for (x,y) in contents.substring(x,contents.find(&"]".to_string()).expect("Oh")).chars().enumerate() {
                 if x > skip.try_into().unwrap() {
+                if y == '[' {
+                    
+                while(data[index] > 0){
+                for (x,y) in contents.substring(x,contents.find(&"]".to_string()).expect("Oh")).chars().enumerate() {
+                if x > skip.try_into().unwrap() {
+                        if y == '>' {index+=1;}
+                        if y == '<' {index-=1;}
+                        if y == '+' {data[index]+=1;}
+                        if y == '-' {data[index]-=1;}
+                        if y == ',' {help_me = args[argindex].clone();data[index] = string_to_decimals(&help_me).unwrap()[0] as i8;argindex+=1;}
+                        if y == '.' {if data[index] != 0{save_me[0] = data[index] as u8;print!("{}",format!("{:?}",decimals_to_string(&save_me)).substring(4,5));}}
+                        if index > 30000 {index = 0;}
+                        if index < 0 {index = 30000;}
+                        }
+                    }
+                    
+                }
                 if y == '>' {index+=1;}
                 if y == '<' {index-=1;}
                 if y == '+' {data[index]+=1;}
