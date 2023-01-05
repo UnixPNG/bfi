@@ -23,7 +23,7 @@ fn main() {
                 if x > skip.try_into().unwrap() {
                 if y == '[' {
                     
-                while(data[index] > 0){
+                while data[index] > 0 {
                 for (x,y) in contents.substring(x,contents.find(&"]".to_string()).expect("Oh")).chars().enumerate() {
                 if x > skip.try_into().unwrap() {
                         if y == '>' {index+=1;}
@@ -60,4 +60,5 @@ fn main() {
         if index < 0 {index = 30000;}
         }
     }
+}
 }
